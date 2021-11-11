@@ -1,3 +1,107 @@
 @import './styles/variables';
 @import './styles/mainscreen';
 @import './styles/settings';
+@import './styles/fonts';
+
+html{
+	box-sizing: border-box;
+}
+
+*, ::after, ::before{
+	box-sizing: inherit;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/images/background/98full.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	margin: 0;
+	font-family: 'Nunito', sans-serif;
+}
+
+.header{
+	min-height: 78px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.settings-btn{
+	margin: 20px;
+	background-image: url(./assets/svg/settings.svg);
+	background-color: inherit;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width: 34px;
+	min-height: 34px;
+	border: 0;
+	cursor: pointer;
+}
+
+.main-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 300px;
+	min-width: 270px;
+}
+
+.quiz-category{
+	background: inherit;
+	border-radius: 30px;
+	min-width: 270px;
+	min-height: 56px;
+	border: 3px solid #ffffff;
+	cursor: pointer;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;
+  color: #ffffff;
+	transition: all 0.3s ease-in-out;
+	&:hover{
+		color: #000000;
+		background-color: #ffffff;
+	}
+}
+
+.footer{
+	min-height: 44px;
+	justify-self: end;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.rss{
+	display: block;
+	min-width: 62px;
+	min-height: 24px;
+	background-image: url(./assets/svg/rss.svg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.employe{
+	min-width: 160px;
+	min-height: 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #ffffff;
+}
+
+.github{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.year{
+	color: #ffffff;
+}
