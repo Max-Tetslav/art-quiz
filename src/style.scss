@@ -9,6 +9,9 @@ html{
 
 *, ::after, ::before{
 	box-sizing: inherit;
+	color: #ffffff;
+	font-family: 'Nunito', sans-serif;
+
 }
 
 body{
@@ -60,7 +63,6 @@ body{
 	min-height: 56px;
 	border: 3px solid #ffffff;
 	cursor: pointer;
-	font-family: 'Nunito', sans-serif;
 	font-size: 24px;
   color: #ffffff;
 	transition: all 0.3s ease-in-out;
@@ -104,4 +106,12 @@ body{
 
 .year{
 	color: #ffffff;
+}
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: flex;
 }

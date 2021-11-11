@@ -1,1 +1,143 @@
+.settings__container{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	min-width: 100vw;
+	min-height: 100vh;
+	z-index: 9;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/images/background/98full.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 
+.settings__header{
+	display: flex;
+	justify-content: center;
+}
+
+
+.back-btn{
+	position: absolute;
+	left: 0;
+	align-self: center;
+	margin-left: 20px;
+	margin-top: 20px;
+	min-width: 34px;
+	min-height: 34px;
+	border: 0;
+	background-image: url(./assets/svg/arrow-back.svg);
+	background-color: inherit;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	justify-self: flex-start;
+	cursor: pointer;
+}
+
+.settings-title{
+	color: #ffffff;
+	margin-bottom: 0;
+	font-size: 20px
+}
+
+.settings__form{
+	width: 100%;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.container__label{
+	font-size: 18px;
+}
+.notify__container{
+	min-width: 200px;
+	min-height: 80px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.timer__container{
+	min-width: 200px;
+	min-height: 80px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.timer__input{
+	width: 40px;
+	height: 40px;
+}
+
+.time__container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.time-input__container{
+	min-width: 200px;
+	min-height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.time-btn{
+	width: 40px;
+	height: 40px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	font-size: 20px;
+	background-color: inherit;
+	transition: all 0.3 ease-in-out;
+	cursor: pointer;
+	&:hover{
+		color: #000000;
+		background-color: #ffffff;
+	}
+}
+
+.time__input{
+	width: 40px;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	text-align: center;
+	background-color: inherit;
+	transition: all 0.3 ease-in-out;
+}
+
+.settings-buttons__container{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.settings-form-btn{
+	height: 50px;
+	width: 140px;
+	border: 2px solid #ffffff;
+	border-radius: 30px;
+	background-color: inherit;
+	transition: all 0.3 ease-in-out;
+	cursor: pointer;
+	&:hover{
+		background-color: #ffffff;
+		color: #000000;
+	}	
+}
