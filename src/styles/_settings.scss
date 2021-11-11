@@ -1,6 +1,6 @@
 .settings__container{
 	position: absolute;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-around;
 	min-width: 100vw;
@@ -13,6 +13,9 @@
 }
 
 .settings__header{
+	width: 100%;
+	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: center;
 }
