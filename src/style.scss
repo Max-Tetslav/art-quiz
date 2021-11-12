@@ -2,6 +2,7 @@
 @import './styles/mainscreen';
 @import './styles/settings';
 @import './styles/fonts';
+@import './styles/arts-categories';
 
 html{
 	box-sizing: border-box;
@@ -34,7 +35,13 @@ body{
 	align-items: center;
 }
 
+.homescreen__header{
+	position: absolute;
+	z-index: 11;
+}
+
 .settings-btn{
+	display: flex;
 	margin: 20px;
 	background-image: url(./assets/svg/settings.svg);
 	background-color: inherit;
@@ -48,6 +55,15 @@ body{
 }
 
 .main-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 300px;
+	min-width: 270px;
+}
+
+.homescreen{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
