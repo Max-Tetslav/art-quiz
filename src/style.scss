@@ -1,7 +1,11 @@
 @import './styles/variables';
-@import './styles/mainscreen';
-@import './styles/settings';
 @import './styles/fonts';
+@import './styles/home-screen';
+@import './styles/settings-screen';
+@import './styles/categories-screen';
+@import './styles/question-screen';
+@import './styles/answer-modal';
+@import './styles/footer';
 
 html{
 	box-sizing: border-box;
@@ -27,6 +31,14 @@ body{
 	font-family: 'Nunito', sans-serif;
 }
 
+.main-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	margin: 0;
+}
+
 .header{
 	min-height: 78px;
 	display: flex;
@@ -34,20 +46,29 @@ body{
 	align-items: center;
 }
 
+.homescreen__header{
+	width: 1440px;
+	display: flex;
+	justify-content: flex-end;
+	margin: auto;
+	z-index: 11;
+}
+
 .settings-btn{
+	display: flex;
 	margin: 20px;
 	background-image: url(./assets/svg/settings.svg);
 	background-color: inherit;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	min-width: 34px;
-	min-height: 34px;
+	width: 34px;
+	height: 34px;
 	border: 0;
 	cursor: pointer;
 }
 
-.main-content{
+.homescreen{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -59,54 +80,106 @@ body{
 .quiz-category{
 	background: inherit;
 	border-radius: 30px;
-	min-width: 270px;
-	min-height: 56px;
+	width: 270px;
+	height: 56px;
 	border: 3px solid #ffffff;
 	cursor: pointer;
+	text-align: center;
+	line-height: 56px;
+	text-decoration: none;
 	font-size: 24px;
   color: #ffffff;
 	transition: all 0.3s ease-in-out;
 	&:hover{
-		color: #000000;
-		background-color: #ffffff;
+		border: 3px solid orange;
+
+		// color: #000000;
+		// background-color: #ffffff;
 	}
 }
 
-.footer{
-	min-height: 44px;
-	justify-self: end;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
-.rss{
-	display: block;
-	min-width: 62px;
-	min-height: 24px;
-	background-image: url(./assets/svg/rss.svg);
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+@keyframes rollin {
+  0% {
+    opacity: 0;
+    transform: translateX(200%) ;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) ;
+  }
 }
 
-.employe{
-	min-width: 160px;
-	min-height: 30px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	color: #ffffff;
+@keyframes rollout {
+  0% {
+    opacity: 0;
+		transform: translateX(0px) ;
+  }
+  100% {
+		opacity: 1;
+		transform: translateX(-200%) ;
+  }
 }
 
-.github{
-	text-decoration: none;
-	color: #ffffff;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.year{
-	color: #ffffff;
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
 }
+
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.grow{
+	animation: grow 0.5s;
+}
+
+.gelatine{
+	animation: gelatine 0.3s;
+}
+
+.shake {
+	animation: shake 0.5s;
+}
+
+.rollin{
+	animation: fade-in 0.5s;
+}
+
+.fadein{
+	animation: fade-in 0.3s;
+}
+
+.rollout{
+	animation: rollout 0.5s;
+}
+
+
 
 .hide{
 	display: none;

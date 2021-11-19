@@ -1,0 +1,52 @@
+.footer{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+
+.footer__container{
+	width: 1440px;
+	min-height: 44px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rss{
+	display: block;
+	min-width: 62px;
+	min-height: 24px;
+	background-image: url(./assets/svg/rss.svg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-left: 10px;
+}
+
+.employe{
+	min-width: 160px;
+	min-height: 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #ffffff;
+}
+
+.github{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.year{
+	margin-right: 10px;
+	color: #ffffff;
+}
+
+.developer__container{
+	min-width: 180px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

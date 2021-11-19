@@ -7,48 +7,12 @@
 	<title>Art Quiz</title>
 </head>
 <body>
-	<header class="header">
-		<button class="settings-btn"></button>
-	</header>
-	<div class="settings__container">
-		<header class="settings__header">
-			<button class="back-btn"></button>
-			<p class="settings-title">Настройки</p>
-		</header>
-		<form class="settings__form">
-			<div class="notify__container">
-				<label class="container__label" for="notify">Оповещения</label>
-				<input class="notify__input" type="range" name="notify" id="notify">
-			</div>
-			<div class="timer__container">
-				<label class="container__label" for="timer">Таймер</label>
-				<input class="timer__input" type="checkbox" name="timer" id="timer" checked>
-			</div>
-			<div class="time__container">
-				<label class="container__label" for="time">Время</label>
-				<div class="time-input__container">
-					<button class="time-btn time-plus-btn" id="minus" type="button">-</button>
-					<input class="time__input" id="time" type="number" min="10" max="30" value="20" readonly>
-					<button class="time-btn time-minus-btn" id="plus" type="button">+</button>
-				</div>
-			</div>	
-		</form>
-		<div class="settings-buttons__container">
-				<button class="settings-form-btn"  for="settings">По умолчанию</button>
-				<button class="settings-form-btn"  for="settings">Сохранить</button>
-			</div>
-	</div>
-	<main class="main-content">
-		<img class="logo-big" src="./assets/svg/main-logo.svg" alt="logo" >
-		<button class="quiz-category">Картины</button>
-		<button class="quiz-category">Художники</button>
+	<main class="main-content"> 
+		<header class="header" id="header"></header>
+
+		<section class="content" id="content"></section>
+
+		<footer class="footer" id="footer"></footer>
 	</main>
-	<footer class="footer">
-		<a class="rss" href="" ></a>
-		<p class="employe">
-			Developer:     <a class="github" href="https://github.com/Max-Tetslav">Max-Tetslav</a>
-		</p>
-		<p class="year">© 2021</p>
-	</footer>
 </body>
 </html>

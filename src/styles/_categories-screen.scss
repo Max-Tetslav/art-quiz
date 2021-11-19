@@ -1,0 +1,120 @@
+.categories{
+	display: none;
+}
+
+.categories__header{
+	width: 100%;
+	min-height: 78px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+}
+
+.category-title{
+	width: 100%;
+	text-align: center;
+}
+
+.categories_container{
+	min-width: 280px;
+	max-width: 1440px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.card{
+	width: 110px;
+	height: 110px;
+	border-radius: 20px;
+	overflow: hidden;
+	object-position: center;
+	object-fit: cover;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	@media screen and (min-width: 550px){
+		width: 130px;
+		height: 130px;
+	}
+
+	@media screen and (min-width: 650px){
+		width: 150px;
+		height: 150px;
+	}
+
+	@media screen and (min-width: 750px){
+		width: 170px;
+		height: 170px;
+	}
+
+	@media screen and (min-width: 1440px){
+		width: 210px;
+		height: 210px;
+	}
+
+	&:hover{
+		border: 2px solid orange;
+	}
+}
+
+.card-img{
+	width: 100%;
+	height: 100%;
+}
+.number-container{
+	width: 50%;
+	height: 50%;
+	position: absolute;
+}
+
+.card-number{
+	margin: 0;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	width: 20px;
+	text-align: center;
+}
+
+
+.played-card{
+	border: 2px solid rgb(0, 104, 0);
+	.number-container{
+		background: linear-gradient(135deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
+	}
+}
+
+.noplayed-card{
+	border: 2px solid rgb(104, 0, 0);
+	.number-container{
+		background: linear-gradient(135deg, rgba(104, 0, 0, 1) 50%, rgba(255,255,255,0) 50%);
+	}
+}
+
+.score-container{
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(315deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
+}
+
+.card-score{
+	margin: 0;
+  position: absolute;
+	bottom: 10%;
+	right: 10%;
+	width: 20px;
+	text-align: center;
+}
