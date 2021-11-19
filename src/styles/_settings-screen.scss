@@ -1,6 +1,6 @@
 .settings__container{
 	position: absolute;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	min-width: 100vw;
@@ -17,12 +17,18 @@
 .settings__header{
 	width: 100%;
 	min-height: 78px;
-	display: none;
+	display: flex;
 	align-items: center;
 	z-index: 10;
 	position: fixed;
 	top: 0;
 	justify-content: center;
+}
+
+.turn-time_container{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
 }
 
 
@@ -64,17 +70,28 @@
 	font-size: 18px;
 }
 .notify__container{
-	min-width: 200px;
+	width: 100%;
 	min-height: 80px;
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
 }
 
-.timer__container{
+.turn-notify_container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.range_container{
 	min-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.timer__container{
+	min-width: 100px;
 	min-height: 80px;
 	display: flex;
 	flex-direction: column;

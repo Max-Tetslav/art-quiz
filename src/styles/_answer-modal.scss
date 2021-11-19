@@ -1,0 +1,57 @@
+.modal-overlay{
+	position: absolute;
+	top: 0;
+	z-index: 11;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba($color: #000000, $alpha: 0.7);
+}
+
+.modal-content{
+	width: 300px;
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #ffffff;
+	border: 2px solid #000000;
+	border-radius: 50px;
+	margin: 0;
+}
+.answer-status{
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+}
+.answer-img{
+	width: 250px;
+	height: 250px;
+	border-radius: 20px;
+}
+
+.modal-text{
+	margin: 8px;
+	color: #000000;
+	text-align: center;
+}
+
+.modal-btn{
+	width: 200px;
+	height: 50px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color: #ffffff;
+	border-radius: 20px;
+	background-color: rgba($color: #000000, $alpha: 0.9);
+	cursor: pointer;
+}
+
+.star{
+	width: 90px;
+	height: 90px;
+}
