@@ -37,7 +37,6 @@
 	overflow: hidden;
 	object-position: center;
 	object-fit: cover;
-	border: 2px solid rgb(104, 0, 0);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -76,7 +75,6 @@
 	width: 50%;
 	height: 50%;
 	position: absolute;
-	background: linear-gradient(135deg, rgba(104,0,0,1) 50%, rgba(255,255,255,0) 50%);
 }
 
 .card-number{
@@ -84,6 +82,39 @@
 	position: absolute;
 	left: 10%;
 	top: 10%;
+	width: 20px;
+	text-align: center;
+}
+
+
+.played-card{
+	border: 2px solid rgb(0, 104, 0);
+	.number-container{
+		background: linear-gradient(135deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
+	}
+}
+
+.noplayed-card{
+	border: 2px solid rgb(104, 0, 0);
+	.number-container{
+		background: linear-gradient(135deg, rgba(104, 0, 0, 1) 50%, rgba(255,255,255,0) 50%);
+	}
+}
+
+.score-container{
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(315deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
+}
+
+.card-score{
+	margin: 0;
+  position: absolute;
+	bottom: 10%;
+	right: 10%;
 	width: 20px;
 	text-align: center;
 }

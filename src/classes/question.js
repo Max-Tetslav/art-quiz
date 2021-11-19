@@ -3,13 +3,14 @@ import Question_header from "./header/question_header";
 import Modal from "./modal";
 
 class Question {
-	constructor(target, categoryType, categoryData, roundData, questionNum, score) {
+	constructor(target, categoryType, categoryData, roundData, questionNum, score, roundId) {
 		this.target = target;
 		this.categoryType = categoryType;
 		this.categoryData = categoryData;
 		this.roundData = roundData;
 		this.questionNum = questionNum;
 		this.score = score;
+		this.roundId = roundId;
 
 
 		this.rightAnswer = this.categoryType === 'arts' ? Number(roundData[this.questionNum].imageNum) : roundData[this.questionNum].author;
@@ -66,7 +67,7 @@ class Question {
 
 
 		if (this.questionNum < 10) {
-			new Modal(this.target, this.categoryType, this.categoryData, this.roundData, this.roundData[this.questionNum], nextQuestionNum, isRight, score);
+			new Modal(this.target, this.categoryType, this.categoryData, this.roundData, this.roundData[this.questionNum], nextQuestionNum, isRight, score, this.roundId);
 		}
 	}
 

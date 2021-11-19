@@ -2,13 +2,16 @@ import Question from "./question";
 import EndRound from "./endround";
 
 class Modal {
-	constructor(target, categoryType, categoryData, roundData, prevQuestionInfo, nextQuestionNum, isRight, score) {
+	constructor(target, categoryType, categoryData, roundData, prevQuestionInfo, nextQuestionNum, isRight, score, roundId) {
 		this.target = target;
 		this.categoryType = categoryType;
 		this.categoryData = categoryData;
 		this.roundData = roundData;
 		this.nextQuestionNum = nextQuestionNum;
 		this.score = score;
+		this.roundId = roundId;
+
+
 		if (localStorage.getItem('notify') === 'true' && isRight) {
 			this.audio = new Audio('../assets/audio/right-answer.wav');
 
@@ -51,10 +54,10 @@ class Modal {
 
 	nextQuestion() {
 		if (this.nextQuestionNum < 10) {
-			new Question(this.target, this.categoryType, this.categoryData, this.roundData, this.nextQuestionNum, this.score);
+			new Question(this.target, this.categoryType, this.categoryData, this.roundData, this.nextQuestionNum, this.score, this.roundId);
 		} else {
 			console.log(this.categoryData);
-			new EndRound(this.target, this.categoryType, this.categoryData, this.roundData, this.score);
+			new EndRound(this.target, this.categoryType, this.categoryData, this.roundData, this.score, this.roundId);
 		}
 	}
 }

@@ -1,12 +1,20 @@
 import Category from "./category";
 
 class EndRound {
-	constructor(target, categoryType, categoryData, roundData, score) {
+	constructor(target, categoryType, categoryData, roundData, score, roundId) {
 		this.target = target;
 		this.categoryType = categoryType;
 		this.categoryData = categoryData;
 		this.roundData = roundData;
 		this.score = score;
+		this.roundId = roundId;
+
+		if (this.score > 5) {
+			localStorage.setItem(`${this.categoryType}${this.roundId}`, 'true');
+			localStorage.setItem(`score${this.categoryType}${this.roundId}`, `${this.score}`);
+		}
+
+		console.log(localStorage.getItem(`${this.categoryType}${this.roundId}`));
 
 		if (localStorage.getItem('notify') === 'true' && this.score > 5) {
 			this.audio = new Audio('../assets/audio/success-round.mp3');
