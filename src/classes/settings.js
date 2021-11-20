@@ -32,10 +32,6 @@ class Settings {
 				</div>	
 				</div>
 			</form>
-			<div class="settings-buttons__container">
-				<button class="settings-form-btn"  for="settings">По умолчанию</button>
-				<button class="settings-form-btn"  for="settings">Сохранить</button>
-			</div>
 		</div>`;
 		this.target.innerHTML = this.screen;
 

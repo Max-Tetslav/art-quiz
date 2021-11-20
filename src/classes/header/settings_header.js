@@ -10,7 +10,7 @@ class Settings_header {
 		</div>`;
 
 		this.target.innerHTML = this.screen;
-		this.target.querySelector('.settings__header').classList.add('rollin');
+		this.target.querySelector('.settings__header').classList.add('fadein');
 
 		this.target.querySelector('.back-btn').addEventListener('click', this.returnScreen);
 	}
