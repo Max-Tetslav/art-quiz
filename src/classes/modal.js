@@ -16,7 +16,7 @@ class Modal {
 
 
 		if (localStorage.getItem('notify') === 'true' && isRight) {
-			this.audio = new Audio('../assets/audio/right-answer.wav');
+			this.audio = new Audio('./assets/audio/right-answer.wav');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;
@@ -26,7 +26,7 @@ class Modal {
 				this.audio.play();
 			});
 		} else if (localStorage.getItem('notify') === 'true' && !isRight) {
-			this.audio = new Audio('../assets/audio/wrong-answer.mp3');
+			this.audio = new Audio('./assets/audio/wrong-answer.mp3');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;

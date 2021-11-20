@@ -42,7 +42,7 @@ class Question {
 		this.variants_container.addEventListener('click', this.chooseAnswer.bind(this));
 		clearTimeout(this.timerGlobal);
 		if (this.timer) {
-			this.timerAudio = new Audio('../assets/audio/timer.mp3');
+			this.timerAudio = new Audio('./assets/audio/timer.mp3');
 			this.timerAudio.volume = Number(localStorage.getItem('volume')) / 100;
 			this.timerAudio.play();
 			this.timer.classList.add('shake');

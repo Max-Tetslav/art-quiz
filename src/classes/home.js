@@ -19,7 +19,7 @@ class Home {
 	}
 
 	async choseCategory(event) {
-		let url = '../images.json'
+		let url = './images.json'
 		let data = await this.fetchData(url);
 
 		let artsData = [...data];

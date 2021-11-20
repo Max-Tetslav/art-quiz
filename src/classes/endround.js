@@ -17,7 +17,7 @@ class EndRound {
 		console.log(localStorage.getItem(`${this.categoryType}${this.roundId}`));
 
 		if (localStorage.getItem('notify') === 'true' && this.score > 5) {
-			this.audio = new Audio('../assets/audio/success-round.mp3');
+			this.audio = new Audio('./assets/audio/success-round.mp3');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;
@@ -27,7 +27,7 @@ class EndRound {
 				this.audio.play();
 			});
 		} else if (localStorage.getItem('notify') === 'true' && this.score < 6) {
-			this.audio = new Audio('../assets/audio/fail-round.mp3');
+			this.audio = new Audio('./assets/audio/fail-round.mp3');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;
