@@ -5,8 +5,7 @@ import load from "../utils/imageOnload";
 
 class Category {
 	constructor(data, categoryType) {
-
-		for (let i = 0;i < 10000;i++) {
+		for (let i = 0;i < 100;i++) {
 			clearTimeout(i);
 		}
 

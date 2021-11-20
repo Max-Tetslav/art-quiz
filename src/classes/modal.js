@@ -3,6 +3,9 @@ import EndRound from "./endround";
 
 class Modal {
 	constructor(target, categoryType, categoryData, roundData, prevQuestionInfo, nextQuestionNum, isRight, score, roundId) {
+		for (let i = 0;i < 100;i++) {
+			clearTimeout(i);
+		}
 		this.target = target;
 		this.categoryType = categoryType;
 		this.categoryData = categoryData;
