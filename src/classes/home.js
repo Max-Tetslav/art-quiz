@@ -5,6 +5,7 @@ class Home {
 	constructor() {
 		this.target = document.querySelector('#content');
 		this.header = new Header_home('home');
+		this.preloadBackground();
 		this.screen = `	
 			<div class="homescreen">
 				<img class="logo-big" src="./assets/svg/main-logo.svg" alt="logo" >
@@ -19,7 +20,7 @@ class Home {
 	}
 
 	async choseCategory(event) {
-		let url = '../images.json'
+		let url = './images.json'
 		let data = await this.fetchData(url);
 
 		let artsData = [...data];
@@ -39,6 +40,14 @@ class Home {
 		}
 
 		new Category(artsQuestions, event.target.id);
+	}
+
+	preloadBackground() {
+		let img = new Image();
+		img.src = `./assets/images/background/98full.jpg`;
+		img.onload = () => {
+			document.body.style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${img.src})`;
+		};
 	}
 
 	async fetchData(url) {

@@ -22,13 +22,13 @@ body{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/images/background/98full.jpg);
+	// background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/images/background/98full.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	min-height: 100vh;
 	margin: 0;
-	font-family: 'Nunito', sans-serif;
+	// font-family: 'Nunito', sans-serif;
 }
 
 .main-content{
@@ -168,11 +168,11 @@ body{
 }
 
 .rollin{
-	animation: fade-in 0.5s;
+	animation: rollin 0.5s;
 }
 
 .fadein{
-	animation: fade-in 0.3s;
+	animation: fade-in 0.5s;
 }
 
 .rollout{
@@ -187,4 +187,14 @@ body{
 
 .show{
 	display: flex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

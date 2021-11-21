@@ -47,14 +47,14 @@
 		height: 130px;
 	}
 
-	@media screen and (min-width: 650px){
+	@media screen and (min-width: 640px){
 		width: 150px;
 		height: 150px;
 	}
 
-	@media screen and (min-width: 750px){
-		width: 170px;
-		height: 170px;
+	@media screen and (min-width: 740px){
+		width: 160px;
+		height: 160px;
 	}
 
 	@media screen and (min-width: 1440px){
@@ -70,51 +70,53 @@
 .card-img{
 	width: 100%;
 	height: 100%;
-}
-.number-container{
-	width: 50%;
-	height: 50%;
-	position: absolute;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .card-number{
 	margin: 0;
 	position: absolute;
-	left: 10%;
-	top: 10%;
-	width: 20px;
+	left: 5%;
+	top: 5%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
 	text-align: center;
-}
-
-
-.played-card{
-	border: 2px solid rgb(0, 104, 0);
-	.number-container{
-		background: linear-gradient(135deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
-	}
-}
-
-.noplayed-card{
-	border: 2px solid rgb(104, 0, 0);
-	.number-container{
-		background: linear-gradient(135deg, rgba(104, 0, 0, 1) 50%, rgba(255,255,255,0) 50%);
-	}
-}
-
-.score-container{
-	width: 50%;
-	height: 50%;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(315deg, rgba(0,104,0,1) 50%, rgba(255,255,255,0) 50%);
+	border-radius: 20px;
 }
 
 .card-score{
 	margin: 0;
-  position: absolute;
-	bottom: 10%;
-	right: 10%;
-	width: 20px;
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
 	text-align: center;
+	border-radius: 20px;
 }
+
+.played-card{
+	border: 2px solid rgb(0, 104, 0);
+	.card-number{
+		background-color: rgb(0, 104, 0);
+	}
+	.card-score{
+		background-color: rgb(0, 104, 0);
+	}
+	
+}
+
+.noplayed-card{
+	border: 2px solid rgb(104, 0, 0);
+	.card-number{
+		background-color: rgb(104, 0, 0);
+	}
+	.card-score{
+		background-color: rgb(104, 0, 0);
+	}
+}
+

@@ -27,28 +27,31 @@ class Question {
 		</div>`
 			: `	<div class="question artist-question">
 		<p class="question__text" >${this.roundData[this.questionNum].question}</p>
+		${localStorage.getItem('timer') === 'true' ? `<p class="question__timer">${localStorage.getItem('seconds')}</p>` : ''}
 		<img class="question-image" src="./assets/img/${this.roundData[this.questionNum].imageNum}.jpg"/>
 		<div class="variants__container artists_container">${this.allVariants.map((variant, index) => `
 		<div class="artist-variant " id="a${index}">${variant}</div>`).join('')}
 		</div>
 		</div>`;
 		this.target.innerHTML = this.screen;
-		this.target.querySelector('.question').classList.add('fadein');
+		this.target.querySelector('.question').classList.add('rollin');
 
 		this.timer = this.target.querySelector('.question__timer');
-		if (this.thimer) {
-			this.timer.classList.add('shake');
-		}
+
 		this.variants_container = this.target.querySelector('.variants__container');
 		this.variants_container.addEventListener('click', this.chooseAnswer.bind(this));
-		this.headerIteration;
-		this.timerGlobal;
 		clearTimeout(this.timerGlobal);
 		if (this.timer) {
-			this.tiktac(this.timer.textContent)
+			this.timerAudio = new Audio('./assets/audio/timer.mp3');
+			console.log(localStorage.getItem('volume'));
+			this.timerAudio.volume = Number(localStorage.getItem('volume')) / 100;
+			this.timer.classList.add('shake');
+			this.timerAudio.play();
+			this.tiktac(this.timer.textContent);
 		};
+		this.timerGlobal = 0;
 		console.log(this.timerGlobal);
-		this.header = new Question_header(this.categoryType, this.categoryData, this.timerGlobal);
+		this.header = new Question_header(this.categoryType, this.categoryData);
 	}
 
 	chooseAnswer(event) {
@@ -65,7 +68,6 @@ class Question {
 
 		nextQuestionNum += 1;
 
-
 		if (this.questionNum < 10) {
 			new Modal(this.target, this.categoryType, this.categoryData, this.roundData, this.roundData[this.questionNum], nextQuestionNum, isRight, score, this.roundId);
 		}
@@ -80,16 +82,11 @@ class Question {
 			prop -= 1;
 		}
 
-
 		let nextQuestionNum = this.questionNum;
 
 		let timerId = setTimeout(this.tiktac.bind(this, [prop]), 1000);
 
 		this.timerGlobal = timerId;
-
-
-		// this.header = new Question_header(this.categoryType, this.categoryData, this.timerGlobal);
-		// this.setHeader.bind(Question, []);
 
 		if (prop === -1) {
 			clearTimeout(timerId);
@@ -99,19 +96,6 @@ class Question {
 
 		if (prop >= 0) {
 			timerId;
-		}
-
-	}
-
-	setHeader() {
-		if (!this.headerIteration) {
-			headerIteration = 0;
-		}
-
-		this.headerIteration += 1;
-
-		if (this.headerIteration < 2) {
-			this.header = new Question_header(this.categoryType, this.categoryData, this.timerGlobal);
 		}
 	}
 
@@ -133,7 +117,6 @@ class Question {
 				};
 			};
 		}
-
 
 		return shuffleArray(variants);
 	}

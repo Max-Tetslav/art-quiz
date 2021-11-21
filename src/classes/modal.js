@@ -3,6 +3,9 @@ import EndRound from "./endround";
 
 class Modal {
 	constructor(target, categoryType, categoryData, roundData, prevQuestionInfo, nextQuestionNum, isRight, score, roundId) {
+		for (let i = 0;i < 100;i++) {
+			clearTimeout(i);
+		}
 		this.target = target;
 		this.categoryType = categoryType;
 		this.categoryData = categoryData;
@@ -13,7 +16,7 @@ class Modal {
 
 
 		if (localStorage.getItem('notify') === 'true' && isRight) {
-			this.audio = new Audio('../assets/audio/right-answer.wav');
+			this.audio = new Audio('./assets/audio/right-answer.wav');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;
@@ -23,7 +26,7 @@ class Modal {
 				this.audio.play();
 			});
 		} else if (localStorage.getItem('notify') === 'true' && !isRight) {
-			this.audio = new Audio('../assets/audio/wrong-answer.mp3');
+			this.audio = new Audio('./assets/audio/wrong-answer.mp3');
 
 			if (localStorage.getItem('volume')) {
 				this.audio.volume = Number(localStorage.getItem('volume')) / 100;
@@ -44,7 +47,7 @@ class Modal {
 				<p class="modal-text answer-year">${prevQuestionInfo.year}</p>
 				<a class="modal-text modal-btn" >Продолжить</a>
 			</div>
-		</div>`;
+		</div > `;
 		this.target.innerHTML = this.screen;
 		this.target.querySelector('.modal-overlay').classList.add('fadein');
 		this.target.querySelector('.modal-content').classList.add('gelatine');
