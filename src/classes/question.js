@@ -34,7 +34,7 @@ class Question {
 		</div>
 		</div>`;
 		this.target.innerHTML = this.screen;
-		this.target.querySelector('.question').classList.add('fadein');
+		this.target.querySelector('.question').classList.add('rollin');
 
 		this.timer = this.target.querySelector('.question__timer');
 
@@ -43,9 +43,10 @@ class Question {
 		clearTimeout(this.timerGlobal);
 		if (this.timer) {
 			this.timerAudio = new Audio('./assets/audio/timer.mp3');
+			console.log(localStorage.getItem('volume'));
 			this.timerAudio.volume = Number(localStorage.getItem('volume')) / 100;
-			this.timerAudio.play();
 			this.timer.classList.add('shake');
+			this.timerAudio.play();
 			this.tiktac(this.timer.textContent);
 		};
 		this.timerGlobal = 0;

@@ -20,10 +20,10 @@ class Category {
 		${this.covers.map((cover, index) => `
 					<div class="card noplayed-card">
 
-						<p class="card-number">${index + 1}</p>
+						<p class="card-number card-info">${index + 1}</p>
 
 						${localStorage.getItem(`score${this.categoryType}${index}`) ? `	
-								<p class="card-score">${localStorage.getItem(`score${this.categoryType}${index}`)}</p>
+								<p class="card-score card-info">${localStorage.getItem(`score${this.categoryType}${index}`)}</p>
 							` : ''}
 							 <div class="card-img" id="${index}"></div>
 							</div>
@@ -39,18 +39,21 @@ class Category {
 
 		this.covers.map((cover, index) => load(this.cardsImg[index], cover));
 
+		this.cardInfo = this.target.querySelectorAll('.card-info');
+
+		this.cardInfo.forEach(item => item.classList.add('rollin'));
+
 		this.cards = this.target.querySelectorAll('.card');
 
-		this.cards.forEach((item, index) => {
-			// item.classList.add('rollin');
+		this.cards.forEach((card, index) => {
 			if (localStorage.getItem(`${this.categoryType}${index}`) === 'true') {
-				item.classList.remove('noplayed-card');
-				item.classList.add('played-card');
+				card.classList.remove('noplayed-card');
+				card.classList.add('played-card');
 			}
+			card.classList.add('rollin');
 		});
-		// this.target.querySelector('.categories_container').classList.add('fadein');
 
-		this.round_container = this.target.querySelector('.categories_container');
+		// this.target.querySelector('.categories_container').classList.add('fadein');
 
 		document.addEventListener('click', this.chooseRound.bind(this));
 

@@ -47,7 +47,7 @@ class Modal {
 				<p class="modal-text answer-year">${prevQuestionInfo.year}</p>
 				<a class="modal-text modal-btn" >Продолжить</a>
 			</div>
-		</div>`;
+		</div > `;
 		this.target.innerHTML = this.screen;
 		this.target.querySelector('.modal-overlay').classList.add('fadein');
 		this.target.querySelector('.modal-content').classList.add('gelatine');
