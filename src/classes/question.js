@@ -34,24 +34,22 @@ class Question {
 		</div>
 		</div>`;
 		this.target.innerHTML = this.screen;
-		this.target.querySelector('.question').classList.add('rollin');
+		this.target.querySelector('.question').classList.add('grow');
 
 		this.timer = this.target.querySelector('.question__timer');
 
 		this.variants_container = this.target.querySelector('.variants__container');
 		this.variants_container.addEventListener('click', this.chooseAnswer.bind(this));
-		clearTimeout(this.timerGlobal);
+		// clearTimeout(this.timerGlobal);
 		if (this.timer) {
 			this.timerAudio = new Audio('./assets/audio/timer.mp3');
-			console.log(localStorage.getItem('volume'));
 			this.timerAudio.volume = Number(localStorage.getItem('volume')) / 100;
-			this.timer.classList.add('shake');
 			this.timerAudio.play();
 			this.tiktac(this.timer.textContent);
 		};
-		this.timerGlobal = 0;
-		console.log(this.timerGlobal);
+		this.timer.classList.add('shake');
 		this.header = new Question_header(this.categoryType, this.categoryData);
+		this.prop;
 	}
 
 	chooseAnswer(event) {
@@ -74,28 +72,24 @@ class Question {
 	}
 
 	tiktac(num) {
-		let prop = Number(num);
-		console.log(prop);
-		this.timer.innerHTML = prop;
+		this.prop = Number(num);
+		console.log(this.prop);
+		this.timer.innerHTML = this.prop;
 
-		if (prop >= 0) {
-			prop -= 1;
+		if (this.prop >= 0) {
+			this.prop -= 1;
 		}
 
 		let nextQuestionNum = this.questionNum;
 
-		let timerId = setTimeout(this.tiktac.bind(this, [prop]), 1000);
+		let timerId = setTimeout(this.tiktac.bind(this, [this.prop]), 1000);
 
 		this.timerGlobal = timerId;
 
-		if (prop === -1) {
+		if (this.prop === -1) {
 			clearTimeout(timerId);
 			nextQuestionNum += 1;
 			new Modal(this.target, this.categoryType, this.categoryData, this.roundData, this.roundData[this.questionNum], nextQuestionNum, false, this.score);
-		}
-
-		if (prop >= 0) {
-			timerId;
 		}
 	}
 

@@ -26,8 +26,6 @@
 	justify-content: space-around;
 	flex-wrap: wrap;
 	height: 500px;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 .card{
@@ -63,7 +61,7 @@
 	}
 
 	&:hover{
-		border: 2px solid orange;
+		transform: scale(1.05);
 	}
 }
 
@@ -78,6 +76,7 @@
 .card-number{
 	margin: 0;
 	position: absolute;
+	z-index: 100;
 	left: 5%;
 	top: 5%;
 	width: 30px;
@@ -90,6 +89,7 @@
 .card-score{
 	margin: 0;
 	position: absolute;
+	z-index: 100;
 	bottom: 5%;
 	right: 5%;
 	width: 30px;

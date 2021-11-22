@@ -2,13 +2,11 @@ import Category_header from "./header/category_header";
 import Question from "./question";
 import Round from "./round";
 import load from "../utils/imageOnload";
+import clearTimer from "../utils/clearTimer";
 
 class Category {
 	constructor(data, categoryType) {
-		for (let i = 0;i < 100;i++) {
-			clearTimeout(i);
-		}
-
+		clearTimer();
 		this.target = document.querySelector('#content');
 		this.rounds = data;
 		this.categoryType = categoryType;
@@ -37,11 +35,7 @@ class Category {
 
 		this.cardsImg = this.target.querySelectorAll('.card-img');
 
-		this.covers.map((cover, index) => load(this.cardsImg[index], cover));
-
-		this.cardInfo = this.target.querySelectorAll('.card-info');
-
-		this.cardInfo.forEach(item => item.classList.add('rollin'));
+		this.covers.map((cover, index) => load(this.cardsImg[index], `./assets/img/${cover}.jpg`));
 
 		this.cards = this.target.querySelectorAll('.card');
 
@@ -50,7 +44,7 @@ class Category {
 				card.classList.remove('noplayed-card');
 				card.classList.add('played-card');
 			}
-			card.classList.add('rollin');
+			card.classList.add('grow');
 		});
 
 		// this.target.querySelector('.categories_container').classList.add('fadein');
