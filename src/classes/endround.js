@@ -14,8 +14,6 @@ class EndRound {
 			localStorage.setItem(`score${this.categoryType}${this.roundId}`, `${this.score}`);
 		}
 
-		console.log(localStorage.getItem(`${this.categoryType}${this.roundId}`));
-
 		if (localStorage.getItem('notify') === 'true' && this.score > 5) {
 			this.audio = new Audio('./assets/audio/success-round.mp3');
 

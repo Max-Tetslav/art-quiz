@@ -1,4 +1,3 @@
-import Header_home from "./header/home_header";
 import Settings_header from "./header/settings_header";
 
 class Settings {
@@ -43,8 +42,6 @@ class Settings {
 		this.secondsCounter = document.querySelector('.time__input');
 		this.plusBtn = document.querySelector('#plus-btn');
 		this.minusBtn = document.querySelector('#minus-btn');
-		// this.minusBtn.disabled = localStorage.getItem('timer');
-		// this.plusBtn.disabled = localStorage.getItem('timer');
 		if (localStorage.getItem('notify') === "true") {
 			this.notifyChecker.checked = true;
 		}
@@ -56,7 +53,6 @@ class Settings {
 		if (!this.notifyChecker.checked) {
 			this.notifyVolume.disabled = true;
 		}
-		console.log(localStorage.getItem('timer'));
 
 		if (localStorage.getItem('timer') === 'true') {
 			this.timerChecker.checked = true;
@@ -85,8 +81,6 @@ class Settings {
 			localStorage.setItem('volume', 0);
 		}
 
-		console.log(localStorage.getItem('volume'));
-
 		localStorage.setItem('notify', this.notifyChecker.checked);
 	}
 
@@ -94,13 +88,11 @@ class Settings {
 		if (this.notifyChecker.checked) {
 			localStorage.setItem('volume', this.notifyVolume.value);
 			this.notifyVolume.setAttribute('value', localStorage.getItem('volume'));
-			console.log(localStorage.getItem('volume'));
 		}
 	}
 
 	turnTimer() {
 		localStorage.setItem('timer', this.timerChecker.checked);
-		// localStorage.setItem('seconds', this.secondsCounter.value);
 	}
 
 	setSeconds() {
@@ -114,8 +106,6 @@ class Settings {
 			this.secondsCounter.setAttribute('value', value);
 			localStorage.setItem('seconds', this.secondsCounter.value);
 		}
-		console.log(this.secondsCounter.value);
-
 	}
 
 	minusSeconds() {
@@ -125,8 +115,6 @@ class Settings {
 			this.secondsCounter.setAttribute('value', value);
 			localStorage.setItem('seconds', this.secondsCounter.value);
 		}
-		console.log(this.secondsCounter.value);
-
 	}
 }
 

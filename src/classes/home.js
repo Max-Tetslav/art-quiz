@@ -4,7 +4,7 @@ import Header_home from './header/home_header';
 class Home {
 	constructor() {
 		this.target = document.querySelector('#content');
-		this.header = new Header_home('home');
+		this.header = new Header_home();
 		this.preloadBackground();
 		this.screen = `	
 			<div class="homescreen">

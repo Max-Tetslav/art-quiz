@@ -15,12 +15,10 @@ class Question_header {
 
 		this.target.innerHTML = this.screen;
 		this.target.querySelector('.question__header').classList.add('fadein');
-
 		this.target.querySelector('.exit-question').addEventListener('click', this.returnScreen.bind(this));
 	}
 
 	returnScreen() {
-		// clearTimeout(this.timerId);
 		new Category(this.categoryData, this.categoryType);
 	}
 

@@ -66,7 +66,6 @@ class Category {
 	}
 
 	chooseRound(event) {
-		console.log(event.target.parentNode.classList.contains('card'));
 		if (event.target.parentNode.classList.contains('card')) {
 			let id = event.target.id;
 			let questions = this.rounds[id];
