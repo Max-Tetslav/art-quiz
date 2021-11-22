@@ -1,2 +1,4 @@
 .DS_Store
 assets/full
+dist
+node_modules
