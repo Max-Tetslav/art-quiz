@@ -1,4 +1,4 @@
-.settings__container{
+.settings__container {
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -9,12 +9,9 @@
   transform: translateY(-50%);
 	z-index: 9;
 	background: rgba($color: #000000, $alpha: 0.0);
-	// background-size: cover;
-	// background-position: center;
-	// background-repeat: no-repeat;
 }
 
-.settings__header{
+.settings__header {
 	width: 100%;
 	min-height: 78px;
 	display: flex;
@@ -25,16 +22,13 @@
 	justify-content: center;
 }
 
-.turn-time_container{
+.turn-time_container {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 }
 
-
-
-
-.back-btn{
+.back-btn {
 	position: absolute;
 	left: 0;
 	align-self: center;
@@ -130,10 +124,12 @@
 	background-color: inherit;
 	transition: all 0.3 ease-in-out;
 	cursor: pointer;
+
 	&:hover{
 		color: #000000;
 		background-color: #ffffff;
 	}
+
 }
 
 .time__input{
@@ -161,8 +157,10 @@
 	background-color: inherit;
 	transition: all 0.3 ease-in-out;
 	cursor: pointer;
+
 	&:hover{
 		background-color: #ffffff;
 		color: #000000;
 	}	
+  
 }
