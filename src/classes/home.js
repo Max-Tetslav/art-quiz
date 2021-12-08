@@ -28,10 +28,16 @@ class Home {
 
     if (event.target.id === 'arts') {
       artsData = data.slice(0, data.length / 2);
-      artsData.forEach((item) => (item.question = `Автором какой из этих картин является <br/> ${item.author}?`));
+      artsData.forEach((item) => {
+        const dataItem = item;
+        dataItem.question = `Автором какой из этих картин является <br/> ${dataItem.author}?`;
+      });
     } else {
       artsData = data.slice(data.length / 2);
-      artsData.forEach((item) => (item.question = `Кто написал картину <br/> ${item.name}?`));
+      artsData.forEach((item) => {
+        const dataItem = item;
+        dataItem.question = `Кто написал картину <br/> ${dataItem.name}?`;
+      });
     }
 
     for (let i = 0; i < artsData.length; i += 10) {

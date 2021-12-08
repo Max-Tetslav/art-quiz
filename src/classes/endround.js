@@ -41,11 +41,7 @@ class EndRound {
 			<div class="modal-content">
 				<p class="modal-text answer-name">${this.getScore(this.score)}</p>
 				<div class="stars-container">
-					${
-            this.stars.length
-              ? this.stars.map((item) => (item = '<img class="star" src="./assets/svg/star.svg"/>')).join('')
-              : '<img class="star" src="./assets/svg/poo.svg"/>'
-          }
+					${this.drawStars(this.stars)}
 				</div>
 				<p class="modal-text answer-author">Ваш результат: ${this.score}</p>
 				<a class="modal-text modal-btn">Далее</a>
@@ -71,6 +67,20 @@ class EndRound {
     }
 
     return result;
+  }
+
+  drawStars(stars) {
+    let element = '';
+
+    if (stars.length) {
+      for (let i = 0; i < stars.length; i += 1) {
+        element += '<img class="star" src="./assets/svg/star.svg"/>';
+      }
+    } else {
+      element = '<img class="star" src="./assets/svg/poo.svg"/>';
+    }
+
+    return element;
   }
 
   setStars(score) {

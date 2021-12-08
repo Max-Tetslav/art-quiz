@@ -21,7 +21,7 @@ class Category {
             ? `<p class="card-score card-info">${localStorage.getItem(`score${this.categoryType}${index}`)}</p>`
             : ''
         }
-			  <div class="card-img" id="${index}"></div>
+        <div class="card-img" id="${index}"></div>
       </div>`,
       )
       .join('')}
