@@ -12,28 +12,20 @@ class Category {
     this.header = new CategoryHeader(this.categoryType);
     this.covers = this.setCovers();
     this.screen = `
-		<div class="categories_container">
-		${this.covers
+		<div class="categories_container">${this.covers
       .map(
         (cover, index) => `
-					<div class="card noplayed-card">
-
-						<p class="card-number card-info">${index + 1}</p>
-            
-						${
-              localStorage.getItem(`score${this.categoryType}${index}`)
-                ? `	
-								<p class="card-score card-info">${localStorage.getItem(`score${this.categoryType}${index}`)}</p>
-							`
-                : ''
-            }
-							 <div class="card-img" id="${index}"></div>
-							</div>
-							`,
+			<div class="card noplayed-card">
+				<p class="card-number card-info">${index + 1}</p>${
+          localStorage.getItem(`score${this.categoryType}${index}`)
+            ? `<p class="card-score card-info">${localStorage.getItem(`score${this.categoryType}${index}`)}</p>`
+            : ''
+        }
+			  <div class="card-img" id="${index}"></div>
+      </div>`,
       )
       .join('')}
-							</div >`;
-
+    </div >`;
     this.target.innerHTML = this.screen;
 
     this.cardsImg = this.target.querySelectorAll('.card-img');
