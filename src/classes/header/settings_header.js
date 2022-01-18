@@ -11,12 +11,10 @@ class Settings_header {
 
 		this.target.innerHTML = this.screen;
 		this.target.querySelector('.settings__header').classList.add('fadein');
-
 		this.target.querySelector('.back-btn').addEventListener('click', this.returnScreen);
 	}
 
 	returnScreen() {
-
 		new Home();
 	}
 }

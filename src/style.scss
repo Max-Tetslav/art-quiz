@@ -91,10 +91,8 @@ body{
   color: #ffffff;
 	transition: all 0.3s ease-in-out;
 	&:hover{
-		border: 3px solid orange;
-
-		// color: #000000;
-		// background-color: #ffffff;
+		color: #000000;
+		background-color: #ffffff;
 	}
 }
 
@@ -160,7 +158,7 @@ body{
 }
 
 .gelatine{
-	animation: gelatine 0.3s;
+	animation: gelatine 0.5s;
 }
 
 .shake {
@@ -174,12 +172,6 @@ body{
 .fadein{
 	animation: fade-in 0.5s;
 }
-
-.rollout{
-	animation: rollout 0.5s;
-}
-
-
 
 .hide{
 	display: none;

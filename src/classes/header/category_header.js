@@ -12,10 +12,7 @@ class Category_header {
 
 		this.target.innerHTML = this.screen;
 		this.target.querySelector('.categories__header').classList.add('fadein');
-
-
 		this.target.querySelector('.exit-category').addEventListener('click', this.returnScreen);
-
 	}
 
 	returnScreen() {

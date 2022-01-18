@@ -1,7 +1,7 @@
 class Footer {
-	constructor(target) {
-		this.target = target;
-		this.screen = `
+  constructor(target) {
+    this.target = target;
+    this.screen = `
 		<div class="footer__container" id="footer">
 			<a class="rss" href="" target="_blank"></a>
 			<div class="developer__container">
@@ -10,8 +10,8 @@ class Footer {
 			</div>
 			<p class="year">© 2021</p>
 		</div>`;
-		this.target.innerHTML = this.screen;
-	}
+    this.target.innerHTML = this.screen;
+  }
 }
 
 export default Footer;

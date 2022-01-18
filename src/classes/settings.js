@@ -1,11 +1,10 @@
-import Header_home from "./header/home_header";
-import Settings_header from "./header/settings_header";
+import SettingsHeader from './header/settings_header';
 
 class Settings {
-	constructor() {
-		this.target = document.querySelector('#content');
-		this.header = new Settings_header();
-		this.screen = `
+  constructor() {
+    this.target = document.querySelector('#content');
+    this.header = new SettingsHeader();
+    this.screen = `
 		<div class="settings__container">
 			<form class="settings__form">
 				<div class="notify__container">
@@ -33,101 +32,90 @@ class Settings {
 				</div>
 			</form>
 		</div>`;
-		this.target.innerHTML = this.screen;
+    this.target.innerHTML = this.screen;
 
-		this.target.querySelector('.settings__container').classList.add('fadein');
+    this.target.querySelector('.settings__container').classList.add('fadein');
 
-		this.notifyChecker = document.querySelector('.notify__checker');
-		this.notifyVolume = document.querySelector('.notify__input');
-		this.timerChecker = document.querySelector('#timer_checked');
-		this.secondsCounter = document.querySelector('.time__input');
-		this.plusBtn = document.querySelector('#plus-btn');
-		this.minusBtn = document.querySelector('#minus-btn');
-		// this.minusBtn.disabled = localStorage.getItem('timer');
-		// this.plusBtn.disabled = localStorage.getItem('timer');
-		if (localStorage.getItem('notify') === "true") {
-			this.notifyChecker.checked = true;
-		}
+    this.notifyChecker = document.querySelector('.notify__checker');
+    this.notifyVolume = document.querySelector('.notify__input');
+    this.timerChecker = document.querySelector('#timer_checked');
+    this.secondsCounter = document.querySelector('.time__input');
+    this.plusBtn = document.querySelector('#plus-btn');
+    this.minusBtn = document.querySelector('#minus-btn');
+    if (localStorage.getItem('notify') === 'true') {
+      this.notifyChecker.checked = true;
+    }
 
-		if (localStorage.getItem('volume')) {
-			this.notifyVolume.value = localStorage.getItem('volume');
-		}
+    if (localStorage.getItem('volume')) {
+      this.notifyVolume.value = localStorage.getItem('volume');
+    }
 
-		if (!this.notifyChecker.checked) {
-			this.notifyVolume.disabled = true;
-		}
-		console.log(localStorage.getItem('timer'));
+    if (!this.notifyChecker.checked) {
+      this.notifyVolume.disabled = true;
+    }
 
-		if (localStorage.getItem('timer') === 'true') {
-			this.timerChecker.checked = true;
-		}
+    if (localStorage.getItem('timer') === 'true') {
+      this.timerChecker.checked = true;
+    }
 
-		if (localStorage.getItem('seconds')) {
-			this.secondsCounter.setAttribute('value', localStorage.getItem('seconds'));
-		}
+    if (localStorage.getItem('seconds')) {
+      this.secondsCounter.setAttribute('value', localStorage.getItem('seconds'));
+    }
 
-		this.notifyChecker.addEventListener('input', this.turnNotify.bind(this));
-		this.notifyVolume.addEventListener('input', this.changeVolume.bind(this));
-		this.timerChecker.addEventListener('input', this.turnTimer.bind(this));
-		this.secondsCounter.addEventListener('input', this.setSeconds.bind(this));
-		this.plusBtn.addEventListener('click', this.plusSeconds.bind(this));
-		this.minusBtn.addEventListener('click', this.minusSeconds.bind(this));
-	}
+    this.notifyChecker.addEventListener('input', this.turnNotify.bind(this));
+    this.notifyVolume.addEventListener('input', this.changeVolume.bind(this));
+    this.timerChecker.addEventListener('input', this.turnTimer.bind(this));
+    this.secondsCounter.addEventListener('input', this.setSeconds.bind(this));
+    this.plusBtn.addEventListener('click', this.plusSeconds.bind(this));
+    this.minusBtn.addEventListener('click', this.minusSeconds.bind(this));
+  }
 
-	turnNotify() {
-		if (this.notifyVolume.disabled) {
-			this.notifyVolume.disabled = false;
-		} else if (!this.notifyVolume.disabled) {
-			this.notifyVolume.disabled = true;
-		}
+  turnNotify() {
+    if (this.notifyVolume.disabled) {
+      this.notifyVolume.disabled = false;
+    } else if (!this.notifyVolume.disabled) {
+      this.notifyVolume.disabled = true;
+    }
 
-		if (!this.notifyChecker.checked) {
-			localStorage.setItem('volume', 0);
-		}
+    if (!this.notifyChecker.checked) {
+      localStorage.setItem('volume', 0);
+    }
 
-		console.log(localStorage.getItem('volume'));
+    localStorage.setItem('notify', this.notifyChecker.checked);
+  }
 
-		localStorage.setItem('notify', this.notifyChecker.checked);
-	}
+  changeVolume() {
+    if (this.notifyChecker.checked) {
+      localStorage.setItem('volume', this.notifyVolume.value);
+      this.notifyVolume.setAttribute('value', localStorage.getItem('volume'));
+    }
+  }
 
-	changeVolume() {
-		if (this.notifyChecker.checked) {
-			localStorage.setItem('volume', this.notifyVolume.value);
-			this.notifyVolume.setAttribute('value', localStorage.getItem('volume'));
-			console.log(localStorage.getItem('volume'));
-		}
-	}
+  turnTimer() {
+    localStorage.setItem('timer', this.timerChecker.checked);
+  }
 
-	turnTimer() {
-		localStorage.setItem('timer', this.timerChecker.checked);
-		// localStorage.setItem('seconds', this.secondsCounter.value);
-	}
+  setSeconds() {
+    localStorage.setItem('seconds', this.secondsCounter.value);
+  }
 
-	setSeconds() {
-		localStorage.setItem('seconds', this.secondsCounter.value);
-	}
+  plusSeconds() {
+    if (this.secondsCounter.value < this.secondsCounter.max) {
+      let value = Number(this.secondsCounter.value);
+      value += 5;
+      this.secondsCounter.setAttribute('value', value);
+      localStorage.setItem('seconds', this.secondsCounter.value);
+    }
+  }
 
-	plusSeconds() {
-		if (this.secondsCounter.value < this.secondsCounter.max) {
-			let value = Number(this.secondsCounter.value);
-			value += 5;
-			this.secondsCounter.setAttribute('value', value);
-			localStorage.setItem('seconds', this.secondsCounter.value);
-		}
-		console.log(this.secondsCounter.value);
-
-	}
-
-	minusSeconds() {
-		if (this.secondsCounter.value > this.secondsCounter.min) {
-			let value = Number(this.secondsCounter.value);
-			value -= 5;
-			this.secondsCounter.setAttribute('value', value);
-			localStorage.setItem('seconds', this.secondsCounter.value);
-		}
-		console.log(this.secondsCounter.value);
-
-	}
+  minusSeconds() {
+    if (this.secondsCounter.value > this.secondsCounter.min) {
+      let value = Number(this.secondsCounter.value);
+      value -= 5;
+      this.secondsCounter.setAttribute('value', value);
+      localStorage.setItem('seconds', this.secondsCounter.value);
+    }
+  }
 }
 
 export default Settings;
